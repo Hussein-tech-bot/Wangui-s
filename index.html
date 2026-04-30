@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="mediaqueries.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon.ico">
+    <link rel="icon" type="image/ico" sizes="32x32" href="images/favicon.ico">
+    <link rel="icon" type="image/ico" sizes="16x16" href="images/favicon.ico">
+    <meta name="theme-color" content="#ffffff">
+
+    <title>Wangui`s</title>
+</head>
+<body>
+    <header>
+        <nav id="desktop-nav">
+            <div class="logo">Hussein Wangui</div>
+            <div>
+                <ul class="nav-links">
+                    <li><a href="#About">About</a></li>
+                    <li><a href="#Projects">Projects</a></li>
+                    <li><a href="#experiences">Experiences</a></li>
+                    <li><a href="#contacts">Contacts</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hamburger / mobile nav -->
+    <nav id="hamburger-nav">
+        <div class="logo">Hussein Wangui</div>
+        <div class="hamburger-menu"></div>
+        <div class="hamburger-icon" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="menu-links">
+            <ul>
+                <li><a href="#About" onclick="toggleMenu()">About</a></li>
+                <li><a href="#Projects" onclick="toggleMenu()">Projects</a></li>
+                <li><a href="#experiences" onclick="toggleMenu()">Experiences</a></li>
+                <li><a href="#contacts" onclick="toggleMenu()">Contacts</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <section id="profile">
+            <div class="section-pic-container">
+                <img id="profile-pic" src="./images/profile-pic-1.png" alt="Profile Picture" style="width: 400px; height: auto;">
+            </div>
+
+            <div class="section-text">
+
+                <h1 class="section-text-h1">Hello</h1>
+                <p class="section-text-l1">I`m Wangui</p>
+                <h1 class="section-text-title">Software Developer</h1>
+
+            </div>
+
+
+
+            <div class="p1">
+
+            <h1 class="about" id="About">About Me</h1>
+
+
+ <p class="statement">I began my software journey out of curiosity<br> 
+                to understand what happens behind every software application.<br> 
+                That curiosity soon grew into a deep interest in learning how things work, <br>
+                which eventually evolved into a career path in software development 
+                — <br>a field that perfectly fulfills my love for learning and creating digital solutions.</p>
+   
+               
+            </div>
+
+
+         </section>   
+
+
+         <section id="part2">
+            <nav class="nav2">
+                <ul>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>Javascript</li>
+                    <li>Node.Js</li>
+                    <li>Java</li>
+                    <li>Python</li>
+                    <li>Git</li>
+                    <li>Github</li>
+                    
+                    
+                </ul>
+            </nav>
+
+            <div class="icon-container">
+  <div class="card1">
+    <h2>Frontend Development</h2>
+    <i class="fa-solid fa-laptop-code"></i>
+    <p>HTML, CSS, Javascript, React.Js, Angular, Bootstrap</p>
+  </div>
+  <div class="card2">
+    <h2>Backend Development</h2>
+    <i class="fa-solid fa-server"></i>
+    <p>Node.Js, Express.Js, MongoDB, MySQL</p>
+  </div>
+  <div class="card3">
+    <h2>UI/UX Designer</h2>
+    <i class="fa-solid fa-paintbrush"></i>
+    <p>Figma, Adobe XD, Sketch</p>
+  </div>
+</div>
+
+
+         
+        </section>
+
+        <!-- Projects Section -->
+        <section id="Projects">
+            <h2 class="section-title">My Projects</h2>
+            <button id="add-project-btn" class="add-btn">+ Add Project</button>
+            <div id="projects-container" class="projects-grid">
+                <!-- Projects will be dynamically added here -->
+            </div>
+        </section>
+
+        <!-- Experiences Section -->
+        <section id="experiences">
+            <h2 class="section-title">My Experiences</h2>
+            <button id="add-experience-btn" class="add-btn">+ Add Experience</button>
+            <div id="experiences-container" class="experiences-list">
+                <!-- Experiences will be dynamically added here -->
+            </div>
+        </section>
+
+        <!-- Modal for Adding Project -->
+        <div id="project-modal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>Add New Project</h2>
+                    <span class="close-modal" onclick="closeProjectModal()">&times;</span>
+                </div>
+                <form id="project-form" class="modal-form">
+                    <div class="form-group">
+                        <label for="project-title">Project Title:</label>
+                        <input type="text" id="project-title" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="project-description">Description:</label>
+                        <textarea id="project-description" rows="4" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="project-tech">Technologies Used:</label>
+                        <input type="text" id="project-tech" placeholder="e.g., React, JavaScript, CSS">
+                    </div>
+                    <div class="form-group">
+                        <label for="project-link">Project Link:</label>
+                        <input type="url" id="project-link">
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" class="btn-submit">Save Project</button>
+                        <button type="button" class="btn-cancel" onclick="closeProjectModal()">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Modal for Adding Experience -->
+        <div id="experience-modal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>Add New Experience</h2>
+                    <span class="close-modal" onclick="closeExperienceModal()">&times;</span>
+                </div>
+                <form id="experience-form" class="modal-form">
+                    <div class="form-group">
+                        <label for="exp-title">Job Title:</label>
+                        <input type="text" id="exp-title" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="exp-company">Company:</label>
+                        <input type="text" id="exp-company" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="exp-duration">Duration:</label>
+                        <input type="text" id="exp-duration" placeholder="e.g., Jan 2023 - Dec 2023">
+                    </div>
+                    <div class="form-group">
+                        <label for="exp-description">Description:</label>
+                        <textarea id="exp-description" rows="4" required></textarea>
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" class="btn-submit">Save Experience</button>
+                        <button type="button" class="btn-cancel" onclick="closeExperienceModal()">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <section id="contacts">
+            <h2 class="section-title">Get in Touch</h2>
+            <div class="contacts1">
+                <ul>
+                    <li>
+                    <a href="https://github.com/Hussein-tech-bot" target="_blank" aria-label="GitHub">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.linkedin.com/in/wangui-wangui-b8a426397/" target="_blank" aria-label="LinkedIn">
+                        <i class="fa-brands fa-linkedin"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="mailto:hussiewangui@gmail.com" class="email-link" aria-label="Email">
+                        <i class="fa-solid fa-envelope"></i>
+                        <span class="email-text">hussiewangui@gmail.com</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+
+            
+            
+    
+               
+        
+       
+      
+       
+       
+      
+
+
+
+
+       
+                  
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
